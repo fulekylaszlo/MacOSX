@@ -143,6 +143,10 @@
 # ------------------------------------------
   alias Apokalipszis="cd /Volumes/HDD/Development/Apokalipszis"
 
+# Command for the "Klánháború" game folder
+# ------------------------------------------
+  alias klanhaboru="cd /Volumes/HDD/Development/Klánháború"
+
 # Command for my Archey command
 # -----------------------------
   alias macinfo="archey"
