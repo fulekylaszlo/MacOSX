@@ -145,7 +145,7 @@
 
 # Command for the "Klánháború" game folder
 # ------------------------------------------
-  alias klanhaboru="cd /Volumes/HDD/Development/Klánháború"
+  alias Klánháború="cd ~/Volumes/HDD/Development/Klánháború"
 
 # Command for my Archey command
 # -----------------------------
