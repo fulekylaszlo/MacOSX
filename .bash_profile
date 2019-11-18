@@ -123,15 +123,15 @@
          fi
     }
 
-# Command for my Prog1 folder
-# ---------------------------
+# Command for my "Prog1" folder
+# -----------------------------------
   alias prog1="cd /volumes/hdd/egyetem/2.félév/Prog1"
 
-# Command for my Prog2 folder
+# Command for my "Prog2" folder
 # ---------------------------
   alias prog2="cd /volumes/hdd/Egyetem/3.félév/Magas\ Szintű\ Programozási\ Nyelvek\ 2/Könyv"
 
-# Command for my Hálózati architektúrák és protokollok Védés folder
+# Command for my "Hálózati architektúrák és protokollok Védés" folder
 # -----------------------------------------------------------------
   alias háló_játék="cd /Volumes/HDD/Egyetem/2.félév/Hálózati\ architektúrák\ és\ protokollok/battleship"
 
@@ -145,8 +145,27 @@
 
 # Command for the "Klánháború" game folder
 # ------------------------------------------
-  alias Klánháború="cd ~/Volumes/HDD/Development/Klánháború"
+  alias kl="cd /Volumes/HDD/Development/Klánháború"
 
 # Command for my Archey command
 # -----------------------------
   alias macinfo="archey"
+
+# Command for "ls -al"
+# -----------------------------
+  alias ll="ls -al"
+
+# Command for my HDD folder
+# -------------------------------------------
+   alias hdd="cd /volumes/hdd"
+
+export PKG_CONFIG_PATH="/usr/local/lib/pkgconfig"
+export PATH="/usr/local/opt/opencv/bin:$PATH"
+export PATH="/usr/local/opt/opencv@2/bin:$PATH"
+export PATH="/usr/local/opt/sqlite/bin:$PATH"
+export PATH="/usr/local/opt/opencv@2/bin:$PATH"
+export PATH="/usr/local/opt/opencv/bin:$PATH"
+export PATH="/usr/local/opt/opencv@2/bin:$PATH"
+
+PKG_CONFIG_PATH=$PKG_CONFIG_PATH:/usr/local/lib/pkgconfig
+export PKG_CONFIG_PATH
