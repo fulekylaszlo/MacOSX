@@ -4,17 +4,9 @@
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/laci/.oh-my-zsh"
 
-# Set name of the theme to load --- if set to "random", it will
-# load a random theme each time oh-my-zsh is loaded, in which case,
-# to know which specific one was loaded, run: echo $RANDOM_THEME
-# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+#ZSH THEME
+#---------
 ZSH_THEME="mytheme"
-
-# Set list of themes to pick from when loading at random
-# Setting this variable when ZSH_THEME=random will cause zsh to load
-# a theme from this variable instead of looking in ~/.oh-my-zsh/themes/
-# If set to an empty array, this variable will have no effect.
-# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -68,7 +60,7 @@ ZSH_THEME="mytheme"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git)
+# plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -89,14 +81,6 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
 export PATH="/usr/local/opt/libxml2/bin:$PATH"
 
 #SPECTRUM PALETTE
@@ -133,3 +117,36 @@ function spectrum_bls() {
     print -P -- "$code: %{$BG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
   done
 }
+
+
+#CUSTOM COMMANDS
+#----------------------------------
+
+# Command for my "Prog1" folder
+# -----------------------------------
+  alias prog1="cd /volumes/hdd/egyetem/2.félév/Prog1"
+
+# Command for my "Prog2" folder
+# ---------------------------
+  alias prog2="cd /volumes/hdd/Egyetem/3.félév/Magas\ Szintű\ Programozási\ Nyelvek\ 2/Könyv"
+
+# Command for my "Hálózati architektúrák és protokollok Védés" folder
+# -----------------------------------------------------------------
+  alias háló_játék="cd /Volumes/HDD/Egyetem/2.félév/Hálózati\ architektúrák\ és\ protokollok/battleship"
+
+# Command to lock the screen
+# --------------------------
+alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+
+# Command for the "Apokalipszis" game folder
+# ------------------------------------------
+  alias Apokalipszis="cd /Volumes/HDD/Development/Apokalipszis"
+
+# Command for the "Klánháború" game folder
+# ------------------------------------------
+  alias kl="cd /Volumes/HDD/Development/Klánháború"
+
+# Command for my HDD folder
+# -------------------------------------------
+   alias hdd="cd /volumes/hdd"
+
