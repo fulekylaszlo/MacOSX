@@ -56,7 +56,3 @@ function accept-line-or-clear-warning () {
 }
 zle -N accept-line-or-clear-warning
 bindkey '^M' accept-line-or-clear-warning
-
-
-
- 
