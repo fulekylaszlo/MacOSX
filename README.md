@@ -1,2 +1,2 @@
 # MacOSX
-Saved .bash_profile/.zshrc for Backup
+Saved .zshrc for backup
