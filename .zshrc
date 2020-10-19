@@ -2,7 +2,18 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/laci/.oh-my-zsh"
+export ZSH="/Users/lacifuleky/.oh-my-zsh"
+
+PATH=/usr/local/Trolltech/Qt-%VERSION%/bin:$PATH
+export PATH
+
+export PATH=$PATH:/Users/lacifuleky/desktop/esport-talent-search-master
+PATH=$PATH:$HOME/anaconda/bin
+export PATH=~/anaconda2/bin:$PATH
+export PATH=~/anaconda3/bin:$PATH
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
+export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
 
 #ZSH THEME
 #---------
@@ -122,25 +133,13 @@ function spectrum_bls() {
 #CUSTOM COMMANDS
 #----------------------------------
 
-# Command for my "Prog1" folder
-# -----------------------------------
-  alias prog1="cd /volumes/hdd/egyetem/2.félév/Prog1"
-
-# Command for my "Prog2" folder
-# ---------------------------
-  alias prog2="cd /volumes/hdd/Egyetem/3.félév/Magas\ Szintű\ Programozási\ Nyelvek\ 2/Könyv"
-
-# Command for my "Hálózati architektúrák és protokollok Védés" folder
-# -----------------------------------------------------------------
-  alias háló_játék="cd /Volumes/HDD/Egyetem/2.félév/Hálózati\ architektúrák\ és\ protokollok/battleship"
-
 # Command to lock the screen
 # --------------------------
 alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 
 # Command for the "Apokalipszis" game folder
 # ------------------------------------------
-  alias Apokalipszis="cd /Volumes/HDD/Development/Apokalipszis"
+  alias Development="cd /Volumes/HDD/Development"
 
 # Command for the "Klánháború" game folder
 # ------------------------------------------
@@ -150,3 +149,19 @@ alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacO
 # -------------------------------------------
    alias hdd="cd /volumes/hdd"
 
+# Command for MacPort update
+# -----------------------
+   alias macport update="sudo port upgrade outdated"
+
+# Command for MacPort selfupdate
+# ------------------------------
+   alias macport selfupdate="sudo port selfupdate"
+
+# Command for MacOsX system update
+# --------------------------------
+  alias system update="softwareupdate -l"
+
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/opt/python@3.8/bin:$PATH"
+
+export PATH="/usr/local/sbin:$PATH"
