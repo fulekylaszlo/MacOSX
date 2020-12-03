@@ -18,8 +18,7 @@ time=$time_enabled
 
 #USER
 #---------
-local user="%B%F{004}%n@%f%F{002}%m:%f%{$reset_color%}"
-
+local user="%B%F{004}%n %f%F{002}%f%{$reset_color%}"
 # Hostname part.  compressed and colorcoded per host_repr array
 # if not found, regular hostname in default color
 #local host="@${host_repr[$HOST]:-$HOST}%{$reset_color%}"
@@ -28,14 +27,21 @@ local user="%B%F{004}%n@%f%F{002}%m:%f%{$reset_color%}"
 #-------
 local pwd="%F{011}%/%{$reset_color%}"
 
-PROMPT='%B${time} %B${user}%B${pwd} '
+PROMPT='%B${time} %F{009}$(git_prompt_info) %B${user}%B${pwd} '
 
 # i would prefer 1 icon that shows the "most drastic" deviation from HEAD,
 # but lets see how this works out
-ZSH_THEME_GIT_PROMPT_PREFIX="%{$fg[yellow]%}"
-ZSH_THEME_GIT_PROMPT_SUFFIX="%{$reset_color%} "
-ZSH_THEME_GIT_PROMPT_DIRTY="%{$fg[green]%} %{$fg[yellow]%}?%{$fg[green]%}%{$reset_color%}"
-ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg[green]%}"
+ZSH_THEME_GIT_PROMPT_PREFIX=""
+ZSH_THEME_GIT_PROMPT_SUFFIX=""
+ZSH_THEME_GIT_PROMPT_SEPARATOR="|"
+ZSH_THEME_GIT_PROMPT_BRANCH="%{$fg_bold[magenta]%}"
+ZSH_THEME_GIT_PROMPT_STAGED="%{$fg[red]%}%{●%G%}"
+ZSH_THEME_GIT_PROMPT_CONFLICTS="%{$fg[red]%}%{✖%G%}"
+ZSH_THEME_GIT_PROMPT_CHANGED="%{$fg[blue]%}%{✚%G%}"
+ZSH_THEME_GIT_PROMPT_BEHIND="%{↓%G%}"
+ZSH_THEME_GIT_PROMPT_AHEAD="%{↑%G%}"
+ZSH_THEME_GIT_PROMPT_UNTRACKED="%{…%G%}"
+ZSH_THEME_GIT_PROMPT_CLEAN="%{$fg_bold[green]%}%{✔%G%}"
 
 # elaborate exitcode on the right when >0
 return_code_enabled="%(?..%{$fg[red]%}%? ↵%{$reset_color%})"
