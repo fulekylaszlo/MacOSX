@@ -3,14 +3,8 @@
 
 # Path to your oh-my-zsh installation.
 export ZSH="/Users/lacifuleky/.oh-my-zsh"
-
-PATH=/usr/local/Trolltech/Qt-%VERSION%/bin:$PATH
-export PATH
-
-export PATH=$PATH:/Users/lacifuleky/desktop/esport-talent-search-master
-PATH=$PATH:$HOME/anaconda/bin
-export PATH=~/anaconda2/bin:$PATH
-export PATH=~/anaconda3/bin:$PATH
+export PATH="/usr/local/opt/qt/bin:$PATH"
+export PATH="/usr/local/bin:$PATH"
 export PATH="/usr/local/opt/python@3.8/bin:$PATH"
 export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
 export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
@@ -71,7 +65,10 @@ ZSH_THEME="mytheme"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-# plugins=(git)
+plugins=(
+git
+git-prompt
+)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -129,17 +126,18 @@ function spectrum_bls() {
   done
 }
 
-
 #CUSTOM COMMANDS
 #----------------------------------
 
 # Command to lock the screen
 # --------------------------
-alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
+  alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
 
 # Command for the "Apokalipszis" game folder
 # ------------------------------------------
   alias Development="cd /Volumes/HDD/Development"
+
+  alias SZFM="cd /volumes/hdd/University/5.semester/SZFM_2020_1_KP_B1G"
 
 # Command for the "Klánháború" game folder
 # ------------------------------------------
@@ -147,21 +145,6 @@ alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacO
 
 # Command for my HDD folder
 # -------------------------------------------
-   alias hdd="cd /volumes/hdd"
+  alias hdd="cd /volumes/hdd"
 
-# Command for MacPort update
-# -----------------------
-   alias macport update="sudo port upgrade outdated"
-
-# Command for MacPort selfupdate
-# ------------------------------
-   alias macport selfupdate="sudo port selfupdate"
-
-# Command for MacOsX system update
-# --------------------------------
-  alias system update="softwareupdate -l"
-
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-
-export PATH="/usr/local/sbin:$PATH"
+  alias ssd="cd /volumes/ssd"
