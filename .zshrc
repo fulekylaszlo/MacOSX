@@ -2,16 +2,19 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Path to your oh-my-zsh installation.
-export ZSH="/Users/lacifuleky/.oh-my-zsh"
-export PATH="/usr/local/opt/qt/bin:$PATH"
-export PATH="/usr/local/bin:$PATH"
-export PATH="/usr/local/opt/python@3.8/bin:$PATH"
-export LDFLAGS="-L/usr/local/opt/python@3.8/lib"
-export PKG_CONFIG_PATH="/usr/local/opt/python@3.8/lib/pkgconfig"
+export ZSH="/Users/fulekylaszlo/.oh-my-zsh"
 
-#ZSH THEME
-#---------
+# Set name of the theme to load --- if set to "random", it will
+# load a random theme each time oh-my-zsh is loaded, in which case,
+# to know which specific one was loaded, run: echo $RANDOM_THEME
+# See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
 ZSH_THEME="mytheme"
+
+# Set list of themes to pick from when loading at random
+# Setting this variable when ZSH_THEME=random will cause zsh to load
+# a theme from this variable instead of looking in $ZSH/themes/
+# If set to an empty array, this variable will have no effect.
+# ZSH_THEME_RANDOM_CANDIDATES=( "robbyrussell" "agnoster" )
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -30,7 +33,7 @@ ZSH_THEME="mytheme"
 # export UPDATE_ZSH_DAYS=13
 
 # Uncomment the following line if pasting URLs and other text is messed up.
-# DISABLE_MAGIC_FUNCTIONS=true
+# DISABLE_MAGIC_FUNCTIONS="true"
 
 # Uncomment the following line to disable colors in ls.
 # DISABLE_LS_COLORS="true"
@@ -42,6 +45,8 @@ ZSH_THEME="mytheme"
 # ENABLE_CORRECTION="true"
 
 # Uncomment the following line to display red dots whilst waiting for completion.
+# Caution: this setting can cause issues with multiline prompts (zsh 5.7.1 and newer seem to work)
+# See https://github.com/ohmyzsh/ohmyzsh/issues/5765
 # COMPLETION_WAITING_DOTS="true"
 
 # Uncomment the following line if you want to disable marking untracked files
@@ -61,14 +66,11 @@ ZSH_THEME="mytheme"
 # ZSH_CUSTOM=/path/to/new-custom-folder
 
 # Which plugins would you like to load?
-# Standard plugins can be found in ~/.oh-my-zsh/plugins/*
-# Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
+# Standard plugins can be found in $ZSH/plugins/
+# Custom plugins may be added to $ZSH_CUSTOM/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(
-git
-git-prompt
-)
+plugins=(git)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -77,7 +79,7 @@ source $ZSH/oh-my-zsh.sh
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
- export LANG=en_US.UTF-8
+# export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
 # if [[ -n $SSH_CONNECTION ]]; then
@@ -89,62 +91,44 @@ source $ZSH/oh-my-zsh.sh
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
-export PATH="/usr/local/opt/libxml2/bin:$PATH"
+# Set personal aliases, overriding those provided by oh-my-zsh libs,
+# plugins, and themes. Aliases can be placed here, though oh-my-zsh
+# users are encouraged to define aliases within the ZSH_CUSTOM folder.
+# For a full list of active aliases, run `alias`.
+#
+# Example aliases
+# alias zshconfig="mate ~/.zshrc"
+# alias ohmyzsh="mate ~/.oh-my-zsh"
 
-#SPECTRUM PALETTE
-#----------------------------------
-typeset -AHg FX FG BG
-
-FX=(
-    reset     "%{[00m%}"
-    bold      "%{[01m%}" no-bold      "%{[22m%}"
-    italic    "%{[03m%}" no-italic    "%{[23m%}"
-    underline "%{[04m%}" no-underline "%{[24m%}"
-    blink     "%{[05m%}" no-blink     "%{[25m%}"
-    reverse   "%{[07m%}" no-reverse   "%{[27m%}"
-)
-
-for color in {000..255}; do
-    FG[$color]="%{[38;5;${color}m%}"
-    BG[$color]="%{[48;5;${color}m%}"
-done
+# ALIASES
+# ------------------------------------------------------------------------------
+alias python=/opt/homebrew/bin/python3
+alias a="sh /Applications/Atom.app/Contents/Resources/app/atom.sh"
+alias documents="cd ~/Documents"
+alias development="cd ~/Documents/development"
+alias university="cd ~/Documents/university"
+alias myip="curl http://ipecho.net/plain; echo"
+# ------------------------------------------------------------------------------
 
 
-ZSH_SPECTRUM_TEXT=${ZSH_SPECTRUM_TEXT:-Arma virumque cano Troiae qui primus ab oris}
+# PLUGINS
+# ------------------------------------------------------------------------------
+plugins=(... history)
+# ------------------------------------------------------------------------------
 
-# Show all 256 colors with color number
-function spectrum_ls() {
-  for code in {000..255}; do
-    print -P -- "$code: %{$FG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
-  done
-}
-
-# Show all 256 colors where the background is set to specific color
-function spectrum_bls() {
-  for code in {000..255}; do
-    print -P -- "$code: %{$BG[$code]%}$ZSH_SPECTRUM_TEXT%{$reset_color%}"
-  done
-}
-
-#CUSTOM COMMANDS
-#----------------------------------
-
-# Command to lock the screen
-# --------------------------
-  alias lockdown="/System/Library/CoreServices/ScreenSaverEngine.app/Contents/MacOS/ScreenSaverEngine"
-
-# Command for the "Apokalipszis" game folder
-# ------------------------------------------
-  alias Development="cd /Volumes/HDD/Development"
-
-  alias SZFM="cd /volumes/hdd/University/5.semester/SZFM_2020_1_KP_B1G"
-
-# Command for the "Klánháború" game folder
-# ------------------------------------------
-  alias kl="cd /Volumes/HDD/Development/Klánháború"
-
-# Command for my HDD folder
-# -------------------------------------------
-  alias hdd="cd /volumes/hdd"
-
-  alias ssd="cd /volumes/ssd"
+# >>> conda initialize >>>
+# !! Contents within this block are managed by 'conda init' !!
+# __conda_setup="$('/Users/fulekylaszlo/opt/anaconda3/bin/conda' 'shell.zsh' 'hook' 2> /dev/null)"
+#f [ $? -eq 0 ]; then
+#    eval "$__conda_setup"
+#else
+    #if [ -f "/Users/fulekylaszlo/opt/anaconda3/etc/profile.d/conda.sh" ]; then
+  #      . "/Users/fulekylaszlo/opt/anaconda3/etc/profile.d/conda.sh"
+  #  else
+  #      export PATH="/Users/fulekylaszlo/opt/anaconda3/bin:$PATH"
+  #  fi
+#fi
+#unset __conda_setup
+# <<< conda initialize <<<
+export PATH="/opt/homebrew/opt/openjdk/bin:$PATH"
+export CPPFLAGS="-I/opt/homebrew/opt/openjdk/include"
